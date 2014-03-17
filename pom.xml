@@ -6,8 +6,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-
-
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
@@ -36,10 +34,6 @@
 			<version>1.4</version>
 			<type>jar</type>
 		</dependency>
-
-
-
-
 
 
 
