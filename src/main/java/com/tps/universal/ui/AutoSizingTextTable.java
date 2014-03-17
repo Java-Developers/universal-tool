@@ -21,24 +21,24 @@ public class AutoSizingTextTable extends JTable {
 	
 	private int hight;
 	
-	private boolean initialized = false;
+	private boolean initialized;
 
 	public AutoSizingTextTable(int minWidth, int maxWidth,
 			int scope, int hight) {
-		super();
 		setAutoResizeMode(AUTO_RESIZE_OFF);
 		this.minWidth = minWidth;
 		this.maxWidth = maxWidth;
 		this.scope = scope;
 		this.hight = hight;
-		this.initialized = true;
+		initialized = true;
 	}
 	
 	@Override
 	public void setModel(TableModel paramTableModel) {
 		super.setModel(paramTableModel);
 	}
-	
+
+    @Override
 	public void tableChanged(TableModelEvent paramTableModelEvent) {
 		super.tableChanged(paramTableModelEvent);
 		setTableSize();
@@ -49,19 +49,19 @@ public class AutoSizingTextTable extends JTable {
 			return;
 		}
 		
-		this.setRowHeight(hight);
+		setRowHeight(hight);
 		
-		TableColumnModel columnModel = this.getColumnModel();
+		TableColumnModel columnModel = getColumnModel();
 		for (int i = 0; i < columnModel.getColumnCount(); i++) {
 			TableColumn column = columnModel.getColumn(i);
 			
-			int preferredWidth = (int) this.getTableHeader().getDefaultRenderer()
+			int preferredWidth = (int) getTableHeader().getDefaultRenderer()
 	                 .getTableCellRendererComponent(this, column.getIdentifier()
 	                         , false, false, -1, i).getPreferredSize().getWidth();
 			
-			for (int j = 0; j < this.getModel().getRowCount(); j++) {
-				int width = (int)this.getCellRenderer(j, i).getTableCellRendererComponent(this,
-			               this.getValueAt(j, i), false, false, j, i).getPreferredSize().getWidth();
+			for (int j = 0; j < getModel().getRowCount(); j++) {
+				int width = (int)getCellRenderer(j, i).getTableCellRendererComponent(this,
+			               getValueAt(j, i), false, false, j, i).getPreferredSize().getWidth();
 				if (width > preferredWidth) {
 					preferredWidth = width;
 				}
@@ -69,7 +69,7 @@ public class AutoSizingTextTable extends JTable {
 			
 			column.setMaxWidth(maxWidth * scope);
 			column.setMinWidth(minWidth * scope);
-			column.setPreferredWidth(preferredWidth + this.getIntercellSpacing().width + 2);
+			column.setPreferredWidth(preferredWidth + getIntercellSpacing().width + 2);
 		}
 	}
 
