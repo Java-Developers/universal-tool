@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="classpath:beans/universal-ui-trade-panel.xml"/>
+
+	<bean id="mainFrame" class="com.tps.universal.ui.MainFrame"  init-method="init">
+		<property name="title" value="Universal Tool" />
+		<property name="preferredWidth" value="920" />
+		<property name="preferredHight" value="690" />
+		<property name="mainPanel" ref="mainPanel" />
+		<property name="lookAndFeel" value="javax.swing.plaf.metal.MetalLookAndFeel"/>
+	</bean>
+	
+	<bean id="mainPanel" class="com.tps.universal.ui.MainPanel"  init-method="init">
+		<property name="tabs">
+			<list>
+				<ref bean="tradeTab"/>
+				<ref bean="processDateTab" />
+				<ref bean="gemfireTab" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="tradeTab" class="com.tps.universal.ui.Tab">
+		<property name="tabName" value="Trade Util" />
+		<property name="component" ref="tradePanel" />
+		<property name="tip" value="Utility to manipulate trade" />
+	</bean>
+	
+	<bean id="processDateTab" class="com.tps.universal.ui.Tab">
+		<property name="tabName" value="ProcessDate Util" />
+		<property name="tip" value="Utility to manipulate process date" />
+	</bean>	
+	
+	<bean id="gemfireTab" class="com.tps.universal.ui.Tab">
+		<property name="tabName" value="Gemfire Util" />
+		<property name="tip" value="Utility to manipulate gemfire cache" />
+	</bean>
+	
+</beans>

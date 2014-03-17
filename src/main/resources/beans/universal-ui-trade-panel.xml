@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="tradePanel" class="com.tps.universal.ui.FunctionPanel"
+		init-method="init">
+		<property name="panelName" value="Trade Panel" />
+		<property name="componentList">
+			<list>
+				<ref bean="gridLayoutTradeLabel" />
+				<ref bean="gridLayoutTradeTextField" />
+				<ref bean="gridLayoutTradeQueryButton" />
+				<ref bean="gridLayoutTradeCompareButton" />
+				<ref bean="gridLayoutTradeTableScrollPane" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="gridLayoutTradeLabel" class="com.tps.universal.ui.GridBagLayoutComponent">
+		<property name="componentName" value="Trade Label" />
+		<property name="gridx" value="0" />
+		<property name="gridy" value="0" />
+		<property name="gridwidth" value="1" />
+		<property name="gridheight" value="1" />
+		<property name="weightx" value="2" />
+		<property name="weighty" value="1" />
+		<property name="anchor" value="13"/>
+		<property name="insets">
+			<bean class="java.awt.Insets">
+				<constructor-arg value="0" />
+				<constructor-arg value="0" />
+				<constructor-arg value="0" />
+				<constructor-arg value="10" />
+			</bean>
+		</property>
+		<property name="component" ref="tradeLabel" />
+	</bean>
+
+	<bean id="tradeLabel" class="javax.swing.JLabel">
+		<property name="text" value="Trade Id:" />
+		<property name="font">
+			<bean class="java.awt.Font">
+				<constructor-arg value="null" />
+				<constructor-arg value="0" />
+				<constructor-arg value="13" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="gridLayoutTradeTextField" class="com.tps.universal.ui.GridBagLayoutComponent">
+		<property name="componentName" value="Trade TextField" />
+		<property name="gridx" value="1" />
+		<property name="gridy" value="0" />
+		<property name="gridwidth" value="1" />
+		<property name="gridheight" value="1" />
+		<property name="weightx" value="1" />
+		<property name="weighty" value="1" />
+		<property name="anchor" value="17"/>
+		<property name="component" ref="tradeTextField" />
+	</bean>
+
+	<bean id="tradeTextField" class="javax.swing.JTextField">
+		<property name="preferredSize">
+			<bean class="java.awt.Dimension">
+				<constructor-arg value="84" />
+				<constructor-arg value="20" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="gridLayoutTradeQueryButton" class="com.tps.universal.ui.GridBagLayoutComponent">
+		<property name="componentName" value="Trade Query Button" />
+		<property name="gridx" value="2" />
+		<property name="gridy" value="0" />
+		<property name="gridwidth" value="1" />
+		<property name="gridheight" value="1" />
+		<property name="weightx" value="1" />
+		<property name="weighty" value="1" />
+		<property name="anchor" value="13" />
+		<property name="component" ref="tradeQueryButton" />
+		<property name="insets">
+			<bean class="java.awt.Insets">
+				<constructor-arg value="0" />
+				<constructor-arg value="0" />
+				<constructor-arg value="0" />
+				<constructor-arg value="10" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="tradeQueryButton" class="com.tps.universal.ui.UniversalButton">
+		<property name="text" value="Query" />
+		<property name="listenerList">
+			<list>
+				<ref bean="actionListener" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="actionListener" class="com.tps.universal.ui.UniversalActionListener" />
+	
+	<bean id="gridLayoutTradeCompareButton" class="com.tps.universal.ui.GridBagLayoutComponent">
+		<property name="componentName" value="Trade Compare Button" />
+		<property name="gridx" value="3" />
+		<property name="gridy" value="0" />
+		<property name="gridwidth" value="1" />
+		<property name="gridheight" value="1" />
+		<property name="weightx" value="1" />
+		<property name="weighty" value="1" />
+		<property name="anchor" value="17" />
+		<property name="component" ref="tradeCompareButton" />
+	</bean>
+
+	<bean id="tradeCompareButton" class="com.tps.universal.ui.UniversalButton">
+		<property name="text" value="Compare" />
+		<property name="listenerList">
+			<list>
+				<ref bean="actionListener" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="gridLayoutTradeTableScrollPane" class="com.tps.universal.ui.GridBagLayoutComponent">
+		<property name="componentName" value="Trade Table" />
+		<property name="gridx" value="0" />
+		<property name="gridy" value="1" />
+		<property name="gridwidth" value="0" />
+		<property name="gridheight" value="0" />
+		<property name="weighty" value="2" />
+		<property name="fill" value="1" />
+		<property name="component" ref="tradeTableScrollPane" />
+	</bean>
+
+	<bean id="tradeTableScrollPane" class="javax.swing.JScrollPane">
+		<constructor-arg ref="tradeTable" />
+		<property name="preferredSize">
+			<bean class="java.awt.Dimension">
+				<constructor-arg value="793" />
+				<constructor-arg value="442" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="tradeTable" class="com.tps.universal.ui.AutoSizingTextTable">
+		<constructor-arg value="75" />
+		<constructor-arg value="750" />
+		<constructor-arg value="1" />
+		<constructor-arg value="20" />
+		<property name="model" ref="tableModel" />
+	</bean>
+
+	<bean id="tableModel" class="com.tps.universal.ui.ResultSetTableModel" />
+</beans>
