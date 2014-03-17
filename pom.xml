@@ -19,16 +19,6 @@
 			<type>jar</type>
 		</dependency>
 		<dependency>
-			<groupId>com.citi.34439.RSGFICache</groupId>
-			<artifactId>rdsentities</artifactId>
-			<version>7.20_R0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.citi.34439.RDSClient</groupId>
-			<artifactId>rdsclient</artifactId>
-			<version>7.1_M0</version>
-		</dependency>
-		<dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>jms</artifactId>
 			<version>1.2</version>
@@ -44,21 +34,7 @@
 			<version>1.4</version>
 			<type>jar</type>
 		</dependency>
-		<dependency>
-			<groupId>com.citigroup.150699</groupId>
-			<artifactId>spark-core</artifactId>
-			<version>1.5_F2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.citigroup.150699</groupId>
-			<artifactId>spark-gemfire</artifactId>
-			<version>1.5_F2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.gemfire</groupId>
-			<artifactId>gemfire</artifactId>
-			<version>6.5.1</version>
-		</dependency>
+
 
 
 	</dependencies>
