@@ -9,9 +9,27 @@
                            http://www.citigroup.com/schema/tps
                            http://www.citigroup.com/schema/tps.xsd">
 
-  <tps:bar id="world" name="yes"/>
+
+  <!--<tps:bar id="world" name="yes"/>-->
 
   <tps:foo id="foooooo">
-    <tps:bar name="baaaaaaaar"/>
+    <tps:bar name="baaaaaaaar" external="baz1"/>
   </tps:foo>
+
+  <!--<bean id="foo1" class="com.tps.universal.spring.Foo">
+    <property name="bars" >
+      <list>
+        <ref bean="bar1"/>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="bar1" class="com.tps.universal.spring.Bar">
+
+  </bean>-->
+
+  <bean id="baz1" class="com.tps.universal.spring.Baz">
+    <property name="age" value="13" />
+  </bean>
+
 </beans>

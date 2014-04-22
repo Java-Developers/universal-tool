@@ -8,7 +8,8 @@ import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 public class MyNamespaceHandler extends NamespaceHandlerSupport  {
     @Override
     public void init() {
-        registerBeanDefinitionParser("foo", new FooBeanParser());
-        registerBeanDefinitionParser("bar", new BarBeanParser());
+        registerBeanDefinitionParser("foo", new FooBeanRawParser());
+        //registerBeanDefinitionParser("foo", new FooBeanParser());
+        //registerBeanDefinitionParser("bar", new BarBeanParser());
     }
 }

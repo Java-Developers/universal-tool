@@ -14,4 +14,14 @@ public class Bar {
     public String getName() {
         return name;
     }
+
+    private Baz baz;
+
+    public Baz getBaz() {
+        return baz;
+    }
+
+    public void setBaz(Baz baz) {
+        this.baz = baz;
+    }
 }

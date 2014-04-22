@@ -1,5 +1,6 @@
 package com.tps.universal.server;
 
+import com.tps.universal.spring.ApplicationContextUtil;
 import com.tps.universal.spring.Foo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,6 +14,8 @@ public class Appserver {
 
         Foo foo = (Foo) ctx.getBean("foooooo");
 
-        System.out.println(foo.getBars().size());
+        System.out.println(foo.getBars().get(0).getBaz().getAge());
+
+
     }
 }

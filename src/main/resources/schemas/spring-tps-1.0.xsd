@@ -10,6 +10,7 @@
         <xsd:element name="bar">
           <xsd:complexType>
             <xsd:attribute name="name"/>
+            <xsd:attribute name="external"/>
           </xsd:complexType>
         </xsd:element>
       </xsd:sequence>
