@@ -1,3 +1,4 @@
+/*
 package com.tps.universal.jvm;
 
 import sun.jvm.hotspot.debugger.AddressException;
@@ -13,9 +14,11 @@ import sun.jvm.hotspot.utilities.SystemDictionaryHelper;
 
 import java.util.Arrays;
 
+*/
 /**
  * Created by jg78779 on 3/18/14.
- */
+ *//*
+
 public class DirectMemorySize extends Tool {
     private boolean exactMallocMode;
     private boolean verbose;
@@ -132,3 +135,4 @@ public class DirectMemorySize extends Tool {
         tool.stop();
     }
 }
+*/

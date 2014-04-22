@@ -1,3 +1,4 @@
+/*
 package com.tps.universal.jvm;
 
 import java.io.*;
@@ -9,9 +10,11 @@ import sun.jvm.hotspot.debugger.*;
 import sun.jvm.hotspot.runtime.*;
 import sun.jvm.hotspot.tools.Tool;
 
+*/
 /**
  * Created by jg78779 on 3/18/14.
- */
+ *//*
+
 public class DumpClassURL extends Tool {
 
     public void run() {
@@ -93,3 +96,4 @@ public class DumpClassURL extends Tool {
         tool.stop();
     }
 }
+*/
